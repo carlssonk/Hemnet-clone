@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hemnet - Sveriges största bostadssajt</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- <a class="navbar-brand" href="#">Hemnet</a> -->
+        <div id="hemnet-header">
+          <img src="https://assets.hemnet.se/assets/images/hemnet-logo.svg" alt="Hemnet" width="120" height="28">
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sök bostad
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Ny sökning</a>
+                <a class="dropdown-item" href="#">Alla bostäder</a>
+                <div class="dropdown-divider"></div>
+                <p class="dropdown-item">Senaste sökningar</p>
+                <p class="dropdown-item">Här visas dina senaste sökningar</p>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sälja bostad
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Annonsera på Hemnet</a>
+                <a class="dropdown-item" href="#">Guide till att sälja bostad</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Artiklar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Bygga hus</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Utland</a>
+            </li>
+          </ul>
+          <span class="nav-item">
+            <a class="nav-link" href="#">Logga in</a>
+          </span>
+          <span class="nav-item">
+            <a class="nav-link" href="#">Skapa konto</a>
+          </span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="page-content">
+      <div class="mainUpper">
+        <div class="form-container">
+          <div class="form-search">
+            <ul class="search-tabs">
+              <li class="tabs tabs-selected">
+                <label class="tabs-text" for="form-search"><b>Till salu</b></label>
+              </li>
+              <li class="tabs">
+                <label class="tabs-text" for="form-search"><b>Slutpriser</b></label>
+              </li>
+            </ul>
+            <div class="search-main">
+              <div class="area">
+                <span><b>Område</b></span>
+                <span id="skriv-in-switch">
+                  <i class="fas fa-pencil-alt"></i>
+                  <span><a href="#">Skriv in</a></span>                  
+                </span>
+              </div>
+              <div class="location">
+                <div class="select-option-box">
+                  <span class="select-option">
+                    <i class="fas fa-chevron-down"></i>
+                    <select name="Alla län" class="location-options" id="state">
+                      <option value="allaLän">Alla län</option>
+                      <option value="stockholm">Stockholms län</option>
+                      <option value="västraGötalands">Västra Götalands län</option>
+                      <option value="skåne">Skåne län</option>
+                      <option value="jönköping">Jönköping län</option>
+                      <option value="uppsala">Uppsala län</option>
+                    </select>
+                  </span>
+                  <span class="select-option">
+                    <i class="fas fa-chevron-down"></i>
+                    <select name="Alla komuner" class="location-options" id="komun">
+                      <option value="allaKomuner">Alla komuner</option>
+                      <option value="komuner1">Göteborgs komun</option>
+                      <option value="komuner2">Borås komun</option>
+                      <option value="komuner3">Skövde komun</option>
+                    </select>
+                  </span>                  
+                </div>
+                <div class="location-search-box hide-element">
+                  <i class="fas fa-search"></i>
+                  <input id="location-search" type="text" placeholder="     Skriv område eller adress"> </input>
+                </div>
+              </div>
+              <div class="expandarea">
+                <label class="expandarea-news">
+                  <b>Utöka område med</b>
+                  <span id="nyhet">NYHET</span>
+                </label>
+                <span class="select-option2">
+                  <i class="fas fa-chevron-down"></i>
+                  <select name="Utöka område" class="expandarea-select">
+                    <option value="0km">+ 0 km</option>
+                    <option value="1km">+ 1 km</option>
+                    <option value="2km">+ 2 km</option>
+                    <option value="5km">+ 5 km</option>
+                    <option value="10km">+ 10 km</option>
+                  </select>                  
+                </span>
+              </div>
+              <div class="filter">
+                <ul>
+                  <li class="filter-select selected"><i class="fas fa-ellipsis-h fa-lg"></i>Alla typer</li>
+                  <li class="filter-select"><i class="fas fa-home fa-lg"></i>Villor</li>
+                  <li class="filter-select"><i class="fas fa-home fa-lg"></i>Radhus</li>
+                  <li class="filter-select"><i class="fas fa-building fa-lg"></i>Lägenheter</li>
+                  <li class="filter-select"><i class="fas fa-laptop-house fa-lg"></i>Fritidsboenden</li>
+                  <li class="filter-select"><i class="fas fa-th-large fa-lg"></i>Tomter</li>
+                  <li class="filter-select"><i class="fas fa-tree fa-lg"></i>Gårdar/Skogar</li>
+                  <li class="filter-select"><i class="fas fa-dot-circle fa-lg"></i>Övriga</li>
+                </ul>
+              </div>
+              <div class="fler-sold-switch">
+                <div class="fler-sokfilter">
+                  <p id="show-filter"><span>Visa sökfilter ▼ </span></p>
+                </div>
+                <div class="sold-inom-box">
+                  <div class="sold-inom hide-element">
+                    <div><b>Såld inom de senaste</b></div>
+                    <div class="sold-inom-labels-list">
+                      <label class="sold-inom-labels" for="3mon">3 mån</label>
+                      <label class="sold-inom-labels" for="6mon">6 mån</label>
+                      <label class="sold-inom-labels sold-selected" for="12mon">12 mån</label>
+                      <label class="sold-inom-labels" for="Visa alla">Visa alla</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="more-filter-options">
+                <div class="more-filter-list">
+                    <label for="rum"><b>Minst antal rum</b></label>
+                    <div class="select-option2">
+                      <i class="fas fa-chevron-down"></i>
+                      <select name="Alla rum" class="location-options" id="rum">
+                        <option value="allaRum">Alla</option>
+                        <option value="1rum">minst 1 rum</option>
+                        <option value="2rum">minst 2 rum</option>
+                        <option value="3rum">minst 3 rum</option>
+                        <option value="4rum">minst 4 rum</option>
+                        <option value="5rum">minst 5 rum</option>
+                      </select>
+                  </div> 
+                </div>
+                <div class="more-filter-list">
+                  <label for="boarea"><b>Boarea</b></label>
+                  <div class="select-option2">
+                    <i class="fas fa-chevron-down"></i>
+                    <select name="Boarea" class="location-options" id="boarea">
+                      <option value="allaBoarea">Alla</option>
+                      <option value="20m">minst 20 m²</option>
+                      <option value="30m">minst 30 m²</option>
+                      <option value="40m">minst 40 m²</option>
+                      <option value="50m">minst 50 m²</option>
+                      <option value="60m">minst 60 m²</option>
+                    </select>
+                  </div>  
+                </div>
+                <div class="more-filter-list">
+                  <b><label for="price" id="pris-slutpris">Högst pris</label></b>
+                  <div class="select-option2">
+                    <i class="fas fa-chevron-down"></i>
+                    <select name="Högst pris" class="location-options" id="price">
+                      <option value="ingetPris">Inget</option>
+                      <option value="100k">100 000 kr</option>
+                      <option value="200k">200 000 kr</option>
+                      <option value="500k">500 000 kr</option>
+                      <option value="1m">1 000 000 kr</option>
+                      <option value="5m">5 000 000 kr</option>
+                    </select>
+                  </div>  
+                </div>
+                <div class="search-filter-lower">
+                  <div class="more-filter-list">
+                    <label for="nyproduktion"><b>Nyproduktion</b></label>
+                    <div class="select-option2">
+                      <i class="fas fa-chevron-down"></i>
+                      <select name="Högst pris" class="location-options" id="nyproduktion">
+                        <option value="visaNyproduktion">Visa nyproduktion</option>
+                        <option value="visaBaraNyproduktion">Visa endast nyproduktion</option>
+                        <option value="döljNyproduktion">Dölj nyproduktion</option>
+                      </select>
+                    </div>  
+                  </div>
+                  <div id="nyckelord">
+                    <label for="price"><b>Nyckelord</b></label>
+                    <div class="select-option2">
+                      <input class="location-options" type="text" placeholder="Balkong, kakelugn, etc.">
+                    </div>  
+                  </div>
+                  <div id="filter-info-box">
+                  <span><i class="fas fa-info-circle"></i> Fler sökfilter finns vid sökresultatet</span>
+                  </div>                     
+                </div>
+              </div>
+              <div class="sold-inom-box2 hide-element">
+                <div class="sold-inom" id="sold-inom-padding">
+                  <div><b>Såld inom de senaste</b></div>
+                  <div class="sold-inom-labels-list">
+                    <label class="sold-inom-labels" for="3mon">3 mån</label>
+                    <label class="sold-inom-labels" for="6mon">6 mån</label>
+                    <label class="sold-inom-labels sold-selected" for="12mon">12 mån</label>
+                    <label class="sold-inom-labels" for="Visa alla">Visa alla</label>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              
+              <div class="search-button">
+                <button id="findRealEstate">Hitta bostäder till salu</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mainLower">
+        <div class="featured-news">
+          <div class="left-big">
+            <div class="left-big-overlay">
+                <span>Bostadsmarknaden</span>
+                <div>
+                  <h2><b>Är det verkligen dåligt att sälja en bostad på sommaren?</b></h2>                  
+                </div>
+
+            </div>
+            <img src="/imgs/page content/summer-house.jpg" alt="featured news big">
+          </div>
+          <div class="right-up">
+            <img src="/imgs/page content/hybrid-car.jpg" alt="featured news small up">
+          </div>
+          <div class="right-down">
+            <img src="/imgs/page content/luxury-house.jpg" alt="featured news small down">
+          </div>
+        </div>
+
+        </div>
+        <div class="recent-news">
+          
+        </div>
+        <div class="toplist">
+          
+        </div>
+
+      </div>
+
+
+    </div>
+  </main>
+  <footer>
+    <div class="footer">
+
+    </div>
+    <div class="footer-smallprint"></div>
+    <!-- Footer Head -->
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="/js/lib/bootstrap.min.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

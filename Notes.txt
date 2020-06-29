@@ -1,0 +1,7 @@
+1. Strukturera main och Footer
+2. Skapa övre main (1920 x 539)
+3. Lägg till Header (1920 x 52)
+4. skapa nedre main (1920 x 1411)
+5. skapa footer (1920 x 279)
+6. skapa footer snallprint (1920 x 51)
+7. Scripta
