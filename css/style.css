@@ -56,7 +56,8 @@ select:focus {
 }
 
 #hemnet-header {
-  padding: 0px 32px 0px 8px;
+  margin: 0px 32px 0px 8px;
+  cursor: pointer;
 }
 
 /* Page Content */
@@ -73,11 +74,19 @@ select:focus {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-image: url("/imgs/water_reflection.jpg");
+  background-image: url("/imgs/water_reflection.jpg"); 
   background-size: cover;  
   background-position: center center;
   background-repeat: no-repeat;
+}
 
+.mainUpper-overlay {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(-180deg,rgba(0,0,0,0),rgba(0,0,0,0) 29%,rgba(0,0,0,0) 64%,rgba(0,0,0,.3))
 }
 
 .form-container {
@@ -335,14 +344,27 @@ select:focus {
   text-align:center;
   border-bottom: 1px solid #dcdcdc;
   line-height:0.1em;
-  margin:10px 0 20px; 
+  margin:10px 0 20px;
 }
 
 #show-filter span { 
+  position: relative;
   background:#fff;
   padding:0 10px;
   color: #109cc0;
+  margin-right: 30px;
 }
+
+#show-filter span i{ 
+  position: absolute;
+  color: rgb(110, 110, 110);
+  background-color:#fff;
+  top: 0;
+  padding: 5px 14px;
+  font-size: 10px;
+}
+
+
 
 .sold-inom {
   padding-top: 12px;
@@ -590,6 +612,12 @@ select:focus {
   color: black;
   margin-top: 4px;
 }
+.recent-news-text span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #109cc0;
+}
+
 
 #topplistor {
   width: 100%;
@@ -696,13 +724,92 @@ select:focus {
 /* Footer */
 .footer {
   width: 100%;
-  height: 279px;
   background-color: #023a15;
+  color: white;
 }
+
+.footer-content {
+  width: 990px;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 52% 24% 24%;
+  padding: 16px 16px 8px;
+}
+
+.footer-content div {
+  padding-right: 32px;
+}
+.footer-content div:nth-last-of-type(1) {
+  padding-right: 0px;
+}
+.footer-content ul {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;  
+  list-style-type: none !important;
+  padding: 12px 0px 0px 0px;
+  line-height: 27px;
+}
+.footer-content span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.footer-content i {
+  padding-right: 12px;
+}
+
+h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 24px !important;
+  border-bottom: 1px dotted #678972;
+  font-weight: 700 !important;
+  padding-bottom: 8px;
+}
+
+.kontakt li:nth-last-of-type(1) {
+  padding-top: 16px;
+}
+
+.fa-robot {
+  font-size: 10px;
+}
+
+
+
 
 /* Footer smallprint*/
 .footer-smallprint {
   width: 100%;
-  height: 51px;
   background-color: #007e47;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
 }
+
+.footer-smallprint-content {
+  width: 725px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.footer-smallprint-content ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-smallprint-content span {
+  margin-left: 16px;
+}
+
+.footer-smallprint-content span:nth-of-type(1) {
+  margin-left: 0;
+}
+
+.footer-smallprint-content ul:nth-of-type(1) span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+

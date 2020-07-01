@@ -172,3 +172,37 @@ findRealEstate.addEventListener("click", function() {
   alert("Error: This website is not that advanced")
 });
 
+
+// *** Code that is NOT contributing to the form container ;) ***
+
+const mainImages = [
+  {
+    img: "/imgs/interior1.jpg"
+  },
+  {
+    img: "/imgs/interior2.jpg"
+  },
+  {
+    img: "/imgs/real_estate.jpg"
+  },
+  {
+    img: "/imgs/water_reflection.jpg"
+  },
+]
+
+let randomImg = mainImages[Math.floor(Math.random() * mainImages.length)];
+let mainUpper = document.querySelector(".mainUpper")
+
+// Reload page when click on Hemnet logo
+document.querySelector("#hemnet-header").addEventListener("click", function() {
+  location.reload()
+});
+
+// Add random image when page loads
+window.addEventListener("load", function() {
+  mainUpper.style.backgroundImage = "url" + "('" + randomImg.img + "')"
+  console.log(randomImg)
+
+})
+
+
