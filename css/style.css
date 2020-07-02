@@ -51,19 +51,77 @@ select:focus {
 
 /* Head */
 .navbar {
-  padding: 0 8px !important;
-  height: 52px;
+  padding: 0px 8px !important;
+  background-color: white !important;
+  border-bottom: 1px solid #dcdcdc;
 }
 
 #hemnet-header {
-  margin: 0px 32px 0px 8px;
+  margin: 0px 36px 0px 12px;
   cursor: pointer;
+  width: 112px;
+}
+
+#navbarSupportedContent li:hover {
+  color: green;
+  text-align: center !important;
+}
+
+#navbarSupportedContent li a {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 14px !important;
+  padding: 14px !important;
+  color: black !important;
+  border-bottom: 3px solid rgba(0,0,0,0);
+}
+#navbarSupportedContent .nav-selected {
+  box-sizing: border-box;
+  border-bottom: 3px solid rgb(0, 180, 0);
+  color: rgb(0, 180, 0) !important;
+}
+
+#navbarSupportedContent li {
+  height: 100% !important;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+}
+#navbarSupportedContent li {
+  border-left: 0px;
+}
+#navbarSupportedContent li:nth-child(1) {
+  border-left: 1px solid #dcdcdc;
+}
+
+#navbarSupportedContent li a:hover {
+  background-color: rgb(240, 240, 240) !important;
+  color: rgb(0, 180, 0) !important;
+}
+
+#navbarSupportedContent span a {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 14px !important;
+  padding: 0px !important;
+  margin: 6px 10px;
+  color: rgb(0, 143, 168);
+}
+
+
+#navbarSupportedContent span a:hover {
+  text-decoration: underline;
+}
+
+.nav-item i{ 
+  color: rgb(110, 110, 110);
+  top: 0;
+  padding: 0px 6px;
+  font-size: 10px;
 }
 
 /* Page Content */
 .page-content {
   width: 100%;
-  /* height: 1473px; */
   padding-bottom: 38px;
   font-family: 'Open Sans', sans-serif;
 }
@@ -83,7 +141,6 @@ select:focus {
 .mainUpper-overlay {
   position: absolute;
   display: block;
-  cursor: pointer;
   height: 100%;
   width: 100%;
   background-image: linear-gradient(-180deg,rgba(0,0,0,0),rgba(0,0,0,0) 29%,rgba(0,0,0,0) 64%,rgba(0,0,0,.3))
