@@ -206,3 +206,5 @@ window.addEventListener("load", function() {
 })
 
 
+var rect = document.querySelector(".form-search").getBoundingClientRect();
+console.log(rect.left);

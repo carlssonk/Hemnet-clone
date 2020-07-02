@@ -1,7 +1,13 @@
 /* General */
+html {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 body {
   font-family: 'Open Sans',Helvetica,Arial,sans-serif;
   font-size: 14px;
+
 }
 
 .page-content ul {
@@ -121,7 +127,7 @@ select:focus {
 
 /* Page Content */
 .page-content {
-  width: 100%;
+  /* width: 100%; */
   padding-bottom: 38px;
   font-family: 'Open Sans', sans-serif;
 }
@@ -150,21 +156,18 @@ select:focus {
   position: relative;
   top: 0;
   bottom: 0;
-  left: -200px;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   padding: 96px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 1006px;
 }
 
 .form-search {
-  margin: 0 auto;
   border-radius: 0px 0px 3px 3px;
   font-size: 14px;
+  padding-left: 8px;
 }
 
 .search-tabs {
@@ -202,6 +205,7 @@ select:focus {
 
 .search-main {
   position: relative;
+  /* margin: 0 auto; */
   width: 590px;
   /* height: 369px; */
   background-color: white;
@@ -551,7 +555,7 @@ select:focus {
 /* Main Lower */
 .mainLower {
   position: relative;
-  width: 990px;
+  max-width: 990px;
   margin: 0 auto;
   /* overflow: hidden; */
 }
@@ -780,13 +784,14 @@ select:focus {
 
 /* Footer */
 .footer {
+  position: relative;
   width: 100%;
   background-color: #023a15;
   color: white;
 }
 
 .footer-content {
-  width: 990px;
+  max-width: 990px;
   height: 100%;
   margin: 0 auto;
   display: grid;
@@ -835,6 +840,8 @@ h2 {
 
 
 /* Footer smallprint*/
+
+
 .footer-smallprint {
   width: 100%;
   background-color: #007e47;
@@ -844,12 +851,11 @@ h2 {
 }
 
 .footer-smallprint-content {
-  width: 725px;
+  max-width: 990px;
   margin: 0 auto;
   padding: 16px;
   display: flex;
-  justify-content: space-between;
-  
+  justify-content: space-evenly;
 }
 
 .footer-smallprint-content ul {
