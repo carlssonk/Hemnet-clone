@@ -205,6 +205,23 @@ window.addEventListener("load", function() {
 
 })
 
+// Add custom Bootstrap 4 Navbar breakpoint
+function mediaQuery(x840) {
+  if (x840.matches) {
+    $(".navbar").removeClass("navbar-expand")
+    $(".navbar").addClass("navbar-expand-*")
+  } else {
+    $(".navbar").addClass("navbar-expand")
+    $(".navbar").removeClass("navbar-expand-*")
+  }
+}
 
-var rect = document.querySelector(".form-search").getBoundingClientRect();
-console.log(rect.left);
+let x840 = window.matchMedia("(max-width: 840px)");
+mediaQuery(x840);
+x840.addListener(mediaQuery);
+
+
+
+
+
+

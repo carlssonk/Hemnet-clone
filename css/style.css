@@ -837,8 +837,6 @@ h2 {
 }
 
 
-
-
 /* Footer smallprint*/
 
 
@@ -876,3 +874,57 @@ h2 {
   cursor: pointer;
 }
 
+.navbar-toggler span {
+  color: black !important;
+  font-size: 14px !important;
+}
+
+.navbar-toggler {
+  padding: 4px 8px !important;
+}
+
+
+.navbar-toggler-icon {
+  width: 14px !important;
+}
+
+/* Responsiveness */
+
+@media all and (max-width: 1280px) {
+  .form-container {
+    padding: 26px 0px;
+  }
+}
+
+@media all and (max-width: 1010px) {
+  #navbarSupportedContent li a {
+    padding: 14px 7px 14px 7px !important;
+  }
+
+  #hemnet-header {
+    width: 8px;
+  }
+  #hemnet-header img {
+    content:url("/imgs/hemnet-logo-small.png");
+    height: 28px;
+  }
+
+}
+
+@media all and (max-width: 840px) {
+  #logoBig {
+    margin: 12px 0px;
+  }
+}
+
+@media all and (max-width: 769px) {
+  
+}
+
+@media all and (max-width: 670px) {
+  
+}
+
+@media all and (max-width: 610px) {
+  
+}
