@@ -177,16 +177,16 @@ findRealEstate.addEventListener("click", function() {
 
 const mainImages = [
   {
-    img: "/imgs/interior1.jpg"
+    img: "imgs/interior1.jpg"
   },
   {
-    img: "/imgs/interior2.jpg"
+    img: "imgs/interior2.jpg"
   },
   {
-    img: "/imgs/real_estate.jpg"
+    img: "imgs/real_estate.jpg"
   },
   {
-    img: "/imgs/water_reflection.jpg"
+    img: "imgs/water_reflection.jpg"
   },
 ]
 
