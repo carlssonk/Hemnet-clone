@@ -1,13 +1,12 @@
 /* General */
-html {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-body {
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
   font-family: 'Open Sans',Helvetica,Arial,sans-serif;
   font-size: 14px;
-
 }
 
 .page-content ul {
@@ -138,7 +137,8 @@ select:focus {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-image: url(""); 
+  background-image: url("");
+  background-color: rgb(129, 163, 147);
   background-size: cover;  
   background-position: center center;
   background-repeat: no-repeat;
@@ -167,7 +167,7 @@ select:focus {
 .form-search {
   border-radius: 0px 0px 3px 3px;
   font-size: 14px;
-  padding-left: 8px;
+  padding-left: 10px;
 }
 
 .search-tabs {
@@ -655,6 +655,7 @@ select:focus {
   position: relative;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 30px 0px 30px 0px;
 }
@@ -666,6 +667,7 @@ select:focus {
   text-align: center;
   color: #39aa36;
   font-size: 14px;
+  padding: 0px 10px;
 }
 .recent-news-text div:nth-child(2){
   font-family: 'Roboto', sans-serif;
@@ -904,7 +906,7 @@ h2 {
     width: 8px;
   }
   #hemnet-header img {
-    content:url("imgs/hemnet-logo-small.png");
+    content:url("/imgs/hemnet-logo-small.png");
     height: 28px;
   }
 
@@ -963,18 +965,105 @@ h2 {
   #logoBig {
     margin: 12px 0px;
   }
+  #hemnet-header img {
+    content:url("https://assets.hemnet.se/assets/images/hemnet-logo.svg");
+  }
+
+  .footer-smallprint-content {
+    display: block;
+    text-align: center;
+  }
+
 }
 
 @media all and (max-width: 769px) {
-   .search-main {
-    width: 98%;
+  .toplist-container ul {
+    width: 100%;
   }
+
 }
 
 @media all and (max-width: 670px) {
-  
+  .form-search {
+    padding: 0px 10px 0px 10px;
+  }
+
+   .search-main {
+    width: 100%;
+  }
+  .search-tabs {
+    position: relative;    
+    width: 100%;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+  .tabs {
+    width: 49%;
+    margin: 0;
+    border-radius: 4px 4px 0px 0px;
+  }
+
+  .footer-content {
+    grid-template-columns: 100%;
+  }
+  .footer-content div {
+    padding: 0;
+  }
+
 }
 
 @media all and (max-width: 610px) {
-  
+  .featured-news {
+    width: 390px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 30% 30%;
+    height: 650px;
+  }
+  .left-big {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .right-up {
+    grid-row: 2;    
+    grid-column: 1;
+  }
+  .right-down {
+    grid-row: 3;    
+    grid-column: 1;
+  }
+
+  .recent-news {
+    padding: 0;
+  }
+  .recent-news-text {
+    flex: 1 0 100%;
+    margin: 24px 0px;
+  }
+
+  .toplist-container ul {
+    max-width: 504px;
+  }
+
+
+  .toplist-container li {
+    width: calc(50% - 12px)
+  }
+}
+
+@media all and (max-width: 436px) {
+  .featured-news {
+    width: 100%;
+  }
+
+  .toplist-container li {
+    width: calc(100% - 12px)
+  }
+  .toplist-container img {
+    height: 100%;
+  }
+  .toplist-container ul {
+    max-width: 240px;
+  }
+
 }

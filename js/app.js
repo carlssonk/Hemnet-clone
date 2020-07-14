@@ -53,12 +53,11 @@ function tabSwitchContent() {
           soldInomBox2.classList.add("hide-element");
           document.querySelector("#pris-slutpris").innerText = "Högst pris"
           moreFilterOptions.style.height = "100%"
-          findRealEstate.innerText = "Hitta bostäder till salu"
         } else {
           soldInomContainer.classList.add("hide-element")
           flerSokFilter.classList.remove("hide-element")          
         }
-
+        findRealEstate.innerText = "Hitta bostäder till salu"
       }else if(this === tabs[1]) {
         if(showFilterClicked === true) {
           soldInomBox.innerHTML = "";
@@ -68,11 +67,14 @@ function tabSwitchContent() {
           moreFilterOptions.style.transition = "0ms"
           moreFilterOptions.style.height = "100%"
           document.querySelector("#sold-inom-padding").style.paddingBottom = "14px"
-          findRealEstate.innerText = "Hitta slutpriser"
         } else {
-          flerSokFilter.classList.add("hide-element")
+          if (formQuery === false) {
+            flerSokFilter.classList.add("hide-element")
+          }
           soldInomContainer.classList.remove("hide-element")          
         }
+        findRealEstate.innerText = "Hitta slutpriser"
+        
       }
     });
   }
@@ -91,26 +93,34 @@ function skrivInSwitchContent() {
   skrivIn.addEventListener("click", function() {
     bool = !bool;
     if(bool === true) {
-      document.querySelector(".select-option-box").classList.toggle("hide-element")      
-      document.querySelector(".location-search-box").classList.toggle("hide-element")
-      searchLocation.style.padding = "0";
-      skrivIn.innerHTML =
-      `
-      <i class="fas fa-bars"></i>
-      <span><a href="#">Välj i lista</a></span>  
-      `
+      customSearchArea()
     } else {
-      document.querySelector(".select-option-box").classList.toggle("hide-element")      
-      document.querySelector(".location-search-box").classList.toggle("hide-element")
-      searchLocation.style.padding = "8px 3px 8px 3px";
-      skrivIn.innerHTML =
-      `
-      <i class="fas fa-pencil-alt"></i>
-      <span><a href="#">Skriv in</a></span>  
-      `
+      regularSearchArea()
     }
   });
 }
+// Also use these functions to call it when page breaks to 670px
+function customSearchArea() {
+  document.querySelector(".select-option-box").classList.add("hide-element")
+  document.querySelector(".location-search-box").classList.remove("hide-element")
+  searchLocation.style.padding = "0";
+  skrivIn.innerHTML =
+  `
+  <i class="fas fa-bars"></i>
+  <span><a href="#">Välj i lista</a></span>  
+  `        
+}
+function regularSearchArea() {
+  document.querySelector(".select-option-box").classList.remove("hide-element")      
+  document.querySelector(".location-search-box").classList.add("hide-element")
+  searchLocation.style.padding = "8px 3px 8px 3px";
+  skrivIn.innerHTML =
+  `
+  <i class="fas fa-pencil-alt"></i>
+  <span><a href="#">Skriv in</a></span>  
+  `        
+}
+
 
 function filterSwitchStyle() {
   for(i = 0; i < filterSelect.length; i++) {
@@ -219,6 +229,46 @@ function mediaQuery(x840) {
 let x840 = window.matchMedia("(max-width: 840px)");
 mediaQuery(x840);
 x840.addListener(mediaQuery);
+
+
+// Modify form container breakpoint
+let formQuery;
+function mediaQuery2(x670) {
+  if (x670.matches) {
+    formQuerySwitchContentMin()
+  } else {
+    formQuerySwitchContentMax()
+    bool = false;
+  }
+}
+
+let x670 = window.matchMedia("(max-width: 670px)");
+mediaQuery2(x670);
+x670.addListener(mediaQuery2)
+
+
+// When page is bigger than 670px switch to this form content
+function formQuerySwitchContentMax() {
+  mainUpper.style.backgroundImage = "url" + "('" + randomImg.img + "')"
+  $(".area").removeClass("hide-element")
+  $(".expandarea").css("width", "50%")
+  $(".filter").removeClass("hide-element")
+  $(".sold-inom-box").removeClass("hide-element")
+    regularSearchArea()
+    formQuery = false;
+}
+
+// When page is smaller than 670px switch to this form content
+function formQuerySwitchContentMin() {
+  mainUpper.style.backgroundImage = "url" + "('')"
+  $(".area").addClass("hide-element")
+  $(".expandarea").css("width", "100%")
+  $(".filter").addClass("hide-element")
+  $(".sold-inom-box").addClass("hide-element")
+    customSearchArea()
+    formQuery = true;
+}
+
 
 
 
