@@ -215,6 +215,11 @@ select:focus {
   z-index: 0;
 }
 
+#bostadstyp {
+  margin: 8px 0px;
+  font-weight: 700;
+}
+
 .area {
   padding-bottom: 8px;
 }
@@ -363,18 +368,18 @@ select:focus {
   color: white !important;
 }
 .sold-selected {
-  background-color: #39aa36;
+  background-color: #39aa36 !important;
   border: 0 !important;
   color: white;
 }
 .rooms-selected {
-  background-color: #39aa36;
+  background-color: #39aa36 !important;
   border: 0 !important;
   color: white;
   border: 1px solid rgba(0, 0, 0, 0) !important;
 }
 .rooms-selected-plus {
-  background-color: #3aaa3657;
+  background-color: #3aaa3657 !important;
   border: 0 !important;
   color: black;
   border: 1px solid rgba(0, 0, 0, 0) !important;
@@ -384,9 +389,9 @@ select:focus {
   color: white;
 }
 
-
-.filter i {
-  padding: 0px 4px;
+.filter-select .filter-icon {
+  width: 30px;
+  text-align: center;
 }
 
 .fa-home {
@@ -523,6 +528,7 @@ select:focus {
   border-image: initial;
   margin: 0px !important;
   padding: 12px 0;
+  background: white;
 }
 .minimum-rooms-labels:nth-of-type(1) {
   border-radius: 3px 0px 0px 3px;
@@ -1057,15 +1063,21 @@ h2 {
   .filter li:nth-of-type(odd) {
     margin-right: 8px;
   }
+  .filter li:nth-of-type(-n+2) {
+    margin-top: 0px;
+  }
+
 
   .search-button {
     position: sticky !important;
     bottom: 0;
   }
 
+
+
   /* Change background color */
   .search-main {
-    background-color: lightgray
+    background: linear-gradient(0deg, rgb(240, 240, 240) 80%, white)
   }
 
 }

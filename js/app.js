@@ -295,6 +295,8 @@ function formQuerySwitchContentMax() {
   $(".more-filter-list").css({"width": "", "padding-left": ""})
   $(".filter").removeClass("hide-element")
   $("#nyckelord").css({"width": "", "padding": ""})
+  $("#bostadstyp").addClass("hide-element")
+  $(".filter ul").css("padding-top", "6px")
     regularSearchArea()
     formQuery = false;
 }
@@ -309,6 +311,8 @@ function formQuerySwitchContentMin() {
   $(".more-filter-list").css({"width": "100%", "padding": "0px"})
   $(".sold-inom-box").addClass("hide-element")  
   $("#nyckelord").css({"width": "100%", "padding": "0px"})
+  $("#bostadstyp").removeClass("hide-element")
+  $(".filter ul").css("padding-top", "0px")
   customSearchArea()
     if (showFilterClicked === true) {
       $(".filter").removeClass("hide-element")    
