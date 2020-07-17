@@ -136,7 +136,7 @@ select:focus {
 .mainUpper {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-image: url("");
   background-color: rgb(129, 163, 147);
   background-size: cover;  
@@ -267,8 +267,8 @@ select:focus {
 .select-option2 i {
   position: absolute;
   height: 100%;
-  width: 12%;  
-  left: 88%;
+  width: 36px;
+  right: 0;
   border-left: 1px solid #dcdcdc;
   border-radius: 5px;
   display: flex;
@@ -351,20 +351,33 @@ select:focus {
   border-radius: 3px;
   margin-top: 8px;
   cursor: pointer;
+  background: linear-gradient(-180deg,#fff 54%,#f4f4f4);
 }
 .filter li:hover {
   border: 1px solid #999999;
 }
 
 .selected {
-  background-color: #39aa36;
+  background: #39aa36 !important;
   border: 0 !important;
-  color: white;
+  color: white !important;
 }
 .sold-selected {
   background-color: #39aa36;
   border: 0 !important;
   color: white;
+}
+.rooms-selected {
+  background-color: #39aa36;
+  border: 0 !important;
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0) !important;
+}
+.rooms-selected-plus {
+  background-color: #3aaa3657;
+  border: 0 !important;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0) !important;
 }
 
 .selected i {
@@ -476,8 +489,8 @@ select:focus {
 }
 
 .more-filter-options i {
-  left: 82%;
-  padding-left: 10px;
+  right: 0;
+  padding-left: 0;
 }
 
 
@@ -494,6 +507,28 @@ select:focus {
 .more-filter-list:nth-child(n+4) {
   padding-left: 0;
   padding-top: 8px;
+}
+
+.minimum-rooms-min {
+  display: flex;
+  text-align: center;
+}
+
+.minimum-rooms-labels {
+  cursor: pointer;
+  flex: 1;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(220, 220, 220);
+  border-image: initial;
+  margin: 0px !important;
+  padding: 12px 0;
+}
+.minimum-rooms-labels:nth-of-type(1) {
+  border-radius: 3px 0px 0px 3px;
+}
+.minimum-rooms-labels:nth-last-of-type(1) {
+  border-radius: 0px 3px 3px 0px;
 }
 
 .search-filter-lower {
@@ -1009,6 +1044,28 @@ h2 {
   }
   .footer-content div {
     padding: 0;
+  }
+
+  .location {
+    margin-top: 8px;
+  }
+
+  .filter li {
+    width: calc(50% - 4px);
+    height: 44px;
+  }
+  .filter li:nth-of-type(odd) {
+    margin-right: 8px;
+  }
+
+  .search-button {
+    position: sticky !important;
+    bottom: 0;
+  }
+
+  /* Change background color */
+  .search-main {
+    background-color: lightgray
   }
 
 }

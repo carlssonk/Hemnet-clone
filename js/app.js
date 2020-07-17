@@ -1,6 +1,7 @@
 // Filter Select
 let filterSelect = document.querySelectorAll(".filter-select")
 let soldInom = document.querySelectorAll(".sold-inom-labels")
+let minimumRooms = document.querySelectorAll(".minimum-rooms-labels")
 let tabs = document.querySelectorAll(".tabs")
 let flerSokFilter = document.querySelector(".fler-sokfilter")
 let locationSearch = document.querySelector("#location-search")
@@ -17,6 +18,7 @@ let soldInomBox = document.querySelector(".sold-inom-box")
 let soldInomBox2 = document.querySelector(".sold-inom-box2")
 
 let showFilterClicked = false;
+let tab = 0;
 
 let bool
 
@@ -31,6 +33,7 @@ function Init() {
 function formContainerSwitchClass() {
   tabSwitchStyle()
   filterSwitchStyle()
+  minimumRoomsSwitchStyle()
   soldSwitchStyle()
   toggleMagnifyingGlass()
 }
@@ -48,6 +51,7 @@ function tabSwitchContent() {
     tabs[i].addEventListener("click", function() {
       // Add/Remove content in Form Container
       if(this === tabs[0]) {
+        tab = 0;
         if(showFilterClicked === true) {
           searchFilterLower.classList.remove("hide-element");
           soldInomBox2.classList.add("hide-element");
@@ -59,9 +63,10 @@ function tabSwitchContent() {
         }
         findRealEstate.innerText = "Hitta bostäder till salu"
       }else if(this === tabs[1]) {
+        tab = 1;
         if(showFilterClicked === true) {
           soldInomBox.innerHTML = "";
-          soldInomBox2.classList.remove("hide-element")          
+          soldInomBox2.classList.remove("hide-element")        
           searchFilterLower.classList.add("hide-element");
           document.querySelector("#pris-slutpris").innerText = "Högst slutpris"
           moreFilterOptions.style.transition = "0ms"
@@ -144,6 +149,28 @@ function filterSwitchStyle() {
   }
 }
 
+function minimumRoomsSwitchStyle() {
+  for(let i = 0; i < minimumRooms.length; i++) {
+    minimumRooms[i].addEventListener("click", function() {
+      let current = document.getElementsByClassName("rooms-selected");
+      current[0].className = current[0].className.replace(" rooms-selected", "");
+      this.className += " rooms-selected";
+
+      // Add soft green style to all elements thats higher than current selection
+      $(".minimum-rooms-labels").removeClass("rooms-selected-plus") // <-- Removes style before applying new style
+      for(let i = $(this).index()+1; i < minimumRooms.length; i++) {
+        minimumRooms[i].classList.add("rooms-selected-plus")
+      }
+
+      // Removes style if clicked on first
+      if ($(this).index() === 0) {
+        $(".minimum-rooms-labels").removeClass("rooms-selected-plus")
+      }
+    });
+  }
+}
+
+
 function soldSwitchStyle() {
   for(i = 0; i < soldInom.length; i++) {
     soldInom[i].addEventListener("click", function() {
@@ -160,10 +187,21 @@ function searchFilterShowContent() {
     flerSokfilter.style.display = "none"
     searchButton.style.marginTop = "12px"
     moreFilterOptions.style.position = "relative"
-    moreFilterOptions.style.height = "164px"
+    moreFilterOptions.style.height = "100%" 
     moreFilterOptions.style.padding = "12px 0px 0px"
     moreFilterOptions.style.opacity = "1"
     moreFilterOptions.style.overflow = "visible"
+    if (formQuery === true) {
+      $(".filter").removeClass("hide-element")
+    }
+    // Modify innerContainer depending on tab 0 or tab 1 is clicked
+    if (formQuery === true && tab === 1) {
+      console.log("do stuff")
+      soldInomBox2.classList.remove("hide-element")        
+      searchFilterLower.classList.add("hide-element")
+      document.querySelector("#pris-slutpris").innerText = "Högst slutpris"
+      document.querySelector("#sold-inom-padding").style.paddingBottom = "14px"
+    }
   })
 }
 
@@ -251,9 +289,12 @@ x670.addListener(mediaQuery2)
 function formQuerySwitchContentMax() {
   mainUpper.style.backgroundImage = "url" + "('" + randomImg.img + "')"
   $(".area").removeClass("hide-element")
+  $(".minimum-rooms-max").removeClass("hide-element")
+  $(".minimum-rooms-min").addClass("hide-element")
   $(".expandarea").css("width", "50%")
+  $(".more-filter-list").css({"width": "", "padding-left": ""})
   $(".filter").removeClass("hide-element")
-  $(".sold-inom-box").removeClass("hide-element")
+  $("#nyckelord").css({"width": "", "padding": ""})
     regularSearchArea()
     formQuery = false;
 }
@@ -262,13 +303,20 @@ function formQuerySwitchContentMax() {
 function formQuerySwitchContentMin() {
   mainUpper.style.backgroundImage = "url" + "('')"
   $(".area").addClass("hide-element")
+  $(".minimum-rooms-max").addClass("hide-element")
+  $(".minimum-rooms-min").removeClass("hide-element")
   $(".expandarea").css("width", "100%")
-  $(".filter").addClass("hide-element")
-  $(".sold-inom-box").addClass("hide-element")
-    customSearchArea()
+  $(".more-filter-list").css({"width": "100%", "padding": "0px"})
+  $(".sold-inom-box").addClass("hide-element")  
+  $("#nyckelord").css({"width": "100%", "padding": "0px"})
+  customSearchArea()
+    if (showFilterClicked === true) {
+      $(".filter").removeClass("hide-element")    
+    } else {
+      $(".filter").addClass("hide-element") 
+    }
     formQuery = true;
 }
-
 
 
 
