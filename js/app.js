@@ -246,13 +246,6 @@ document.querySelector("#hemnet-header").addEventListener("click", function() {
   location.reload()
 });
 
-// Add random image when page loads
-window.addEventListener("load", function() {
-  mainUpper.style.backgroundImage = "url" + "('" + randomImg.img + "')"
-  console.log(randomImg)
-
-})
-
 // Add custom Bootstrap 4 Navbar breakpoint
 function mediaQuery(x840) {
   if (x840.matches) {
@@ -322,7 +315,16 @@ function formQuerySwitchContentMin() {
     formQuery = true;
 }
 
-
+// Add random image when page loads
+if (formQuery === false) {
+  window.addEventListener("load", function() {
+    mainUpper.style.backgroundImage = "url" + "('" + randomImg.img + "')"
+});
+} else {
+  window.addEventListener("load", function() {
+    mainUpper.style.backgroundImage = "url" + "('')"
+  });
+}
 
 
 

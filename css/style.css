@@ -947,7 +947,7 @@ h2 {
     width: 8px;
   }
   #hemnet-header img {
-    content:url("/imgs/hemnet-logo-small.png");
+    content:url("imgs/hemnet-logo-small.png");
     height: 28px;
   }
 
@@ -1079,6 +1079,12 @@ h2 {
   .search-main {
     background: linear-gradient(0deg, rgb(240, 240, 240) 80%, white)
   }
+  #show-filter span {
+    background: rgb(240, 240, 240);
+  }
+  #show-filter span i {
+    background: rgb(240, 240, 240);
+  }
 
 }
 
@@ -1092,6 +1098,9 @@ h2 {
   .left-big {
     grid-row: 1;
     grid-column: 1;
+  }
+  .image-overlay-text {
+    font-size: 20px;
   }
   .right-up {
     grid-row: 2;    
