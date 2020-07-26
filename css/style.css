@@ -947,7 +947,7 @@ h2 {
     width: 8px;
   }
   #hemnet-header img {
-    content:url("imgs/logologo.png");
+    content:url("https://png2.cleanpng.com/sh/c4a7abd2465d3e62a5faa0b8e55f32f2/L0KzQYi4UsIxN6ZriZGAYUPkQYm8UcMza5ZnSZCDOUi8RIeAU8E2OWQ8TagCNUO1QIm4UsYxQV91htk=/5a3a185132ceb1.89894673151375675320812609.png");
     /* content:url("/imgs/logologo.png"); <-- for local */
     height: 28px;
   }
@@ -1008,7 +1008,7 @@ h2 {
     margin: 12px 0px;
   }
   #hemnet-header img {
-    content:url("imgs/hemnet-logo.svg");
+    content:url("https://assets.hemnet.se/assets/images/hemnet-logo.svg");
     /* content:url("/imgs/hemnet-logo.svg"); <-- for local */
   }
 
