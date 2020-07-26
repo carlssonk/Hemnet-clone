@@ -947,7 +947,8 @@ h2 {
     width: 8px;
   }
   #hemnet-header img {
-    content:url("/imgs/logologo.png");
+    content:url("imgs/logologo.png");
+    /* content:url("/imgs/logologo.png"); <-- for local */
     height: 28px;
   }
 
@@ -1007,7 +1008,8 @@ h2 {
     margin: 12px 0px;
   }
   #hemnet-header img {
-    content:url("https://assets.hemnet.se/assets/images/hemnet-logo.svg");
+    content:url("imgs/hemnet-logo.svg");
+    /* content:url("/imgs/hemnet-logo.svg"); <-- for local */
   }
 
   .footer-smallprint-content {
